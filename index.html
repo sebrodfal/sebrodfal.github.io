@@ -1,161 +1,539 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device- initial-scale=1.0">
-    <title>Sebastian Rodriguez Research Webpage</title>
-    <style>
- body {
-            font-family: Arial, sans-serif;
-            background-color: #222222;
-            color: #dddddd;
-        }
-        header {
-            background-color: #333333;
-            padding: 20px;
-        }
-        h1 {
-            margin: 0;
-        }
-        p {
-            margin: 0;
-            padding: 10px 0;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-        }
-        nav li {
-            margin: 0 10px;
-        }
-        nav a {
-            color: #dddddd;
-            text-decoration: none;
-        }
-        nav a:hover {
-            color: #bbbbbb;
-        }
-        section {
-            padding: 20px;
-        }
-        section h2 {
-            margin: 0;
-            padding: 10px 0;
-            border-bottom: 1px solid #444444;
-        }
-        section ul {
-            list-style: none;
-            padding: 0;
-        }
-        section li {
-            margin: 10px 0;
-        }
-        section a {
-            color: #bbbbbb;
-            text-decoration: none;
-        }
-        section a:hover {
-            color: #dddddd;
-        }
-        #photo {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 200px;
-        }
-        #photo img {
-            max-width: 100%;
-            max-height: 100%;
-        }
-.submenu {
-    display: none;
-    position: absolute;
-    background-color: #222222;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Sebastian Rodriguez Research Webpage</title>
+  <style>
+    :root {
+      --bg-color: #fdfdfd;
+      --card-bg: #ffffff;
+      --text-color: #1a1a1a;
+      --link-color: #007acc;
+      --hover-link: #005999;
+      --header-bg: linear-gradient(to right, #66a6ff, #89f7fe);
+      --contact-bg: linear-gradient(to right, #acb6e5, #74ebd5);
+    }
 
-.submenu li {
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    color: #000;
-}
+    body.dark-mode {
+      --bg-color: #1e1e2f;
+      --card-bg: rgba(40, 40, 60, 0.9);
+      --text-color: #f0f0f0;
+      --link-color: #aaffff;
+      --hover-link: #ffffff;
+      --header-bg: linear-gradient(to right, #4a00e0, #8e2de2);
+      --contact-bg: linear-gradient(to right, #6a11cb, #2575fc);
+    }
 
-.submenu li:hover {
-    background-color: #444444;
-}
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+      transition: all 0.3s ease;
+    }
 
-li:hover .submenu {
-    display: block;
-}
-		
-    </style>
+    header {
+      background: var(--header-bg);
+      padding: 30px 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.2em;
+      color: white;
+    }
+
+     nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    nav li {
+      margin: 0 15px;
+      position: relative;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+      display: inline-block;
+      padding: 8px;
+    }
+
+    nav a:hover {
+      color: #ffccff;
+    }
+
+    .submenu {
+      display: none;
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 6px;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      top: calc(100% - 10px);
+      left: 0;
+      z-index: 10;
+      transition: opacity 0.2s ease;
+    }
+
+    .submenu li {
+      padding: 10px 15px;
+    }
+
+    .submenu li a {
+      color: black;
+      display: block;
+    }
+
+    .submenu li:hover {
+      background-color: #eee;
+    }
+
+    li:hover > .submenu,
+    li:focus-within > .submenu {
+      display: block;
+    }
+
+    nav li {
+      padding-bottom: 0;
+    }
+
+    header {
+      background: var(--header-bg);
+      padding: 15px 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.2em;
+      color: white;
+    }
+
+    #photo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 250px;
+      padding: 30px;
+    }
+
+    #photo img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      padding: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .grid-item {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .grid-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+
+    .grid-item h2 {
+      margin-top: 0;
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+    }
+
+    .grid-item a {
+      color: var(--link-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .grid-item a:hover {
+      color: var(--hover-link);
+    }
+
+    #contact {
+      padding: 30px;
+      background: var(--contact-bg);
+      color: white;
+    }
+
+    #contact h2 {
+      margin-top: 0;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .blue-link {
+      color: #ddf;
+    }
+
+    .blue-link:hover {
+      color: #fff;
+    }
+
+    .toggle-mode {
+      margin-left: auto;
+      background: none;
+      border: 2px solid white;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    .toggle-mode:hover {
+      background-color: rgba(255,255,255,0.2);
+    }
+	
+		#photo-slider {
+	  position: relative;
+	  text-align: center;
+	  padding: 20px;
+	}
+
+	.slider-container {
+	  position: relative;
+	  overflow: hidden;
+	  width: 100%;
+	  max-width: 900px;
+	  margin: 0 auto;
+	  border-radius: 16px;
+	  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+	}
+
+	.slider {
+	  display: flex;
+	  transition: transform 0.5s ease-in-out;
+	}
+
+	.slide {
+	  flex: 1 0 100%;
+	}
+
+	.slide img {
+	  width: 100%;
+	  height: auto;
+	  display: block;
+	  border-radius: 16px;
+	}
+
+	.prev, .next {
+	  position: absolute;
+	  top: 50%;
+	  transform: translateY(-50%);
+	  background-color: rgba(0,0,0,0.4);
+	  color: white;
+	  border: none;
+	  padding: 10px 16px;
+	  cursor: pointer;
+	  border-radius: 50%;
+	  z-index: 2;
+	  font-size: 24px;
+	}
+
+	.prev:hover, .next:hover {
+	  background-color: rgba(0,0,0,0.6);
+	}
+
+	.prev { left: 10px; }
+	.next { right: 10px; }
+
+
+	#bubble-slider {
+	  padding: 30px 20px;
+	  text-align: center;
+	}
+
+	.bubble-container {
+	  display: flex;
+	  justify-content: center;
+	  flex-wrap: wrap;
+	  gap: 30px;
+	  padding: 20px;
+	  max-width: 1000px;
+	  margin: 0 auto;
+	}
+
+	.bubble {
+	  width: 200px;
+	  height: 200px;
+	  border-radius: 10%;
+	  overflow: hidden;
+	  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+	  transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.bubble:hover {
+	  transform: scale(1.6);
+	  box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+	}
+
+	.bubble img {
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover;
+	  display: block;
+	}
+
+	
+	
+  </style>
 </head>
-<body>
-    <header>
-        <h1>Bs. Sebastian Rodriguez</h1>
+<body class="light-mode">
+  <header>
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+      <h1>Bs. Sebastian Rodriguez</h1>
+      <button class="toggle-mode" onclick="document.body.classList.toggle('dark-mode')">Toggle Light/Dark</button>
+    </div>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-            <li>
-            <a href="#research">Research</a>
-            <ul class="submenu">
-            <li><a href="QuantumComputing_index.html">Quantum Computing</a></li>
-            <li><a href="ComplexSystems_index">Complex Systems</a></li>
-            </ul>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a href="#research">Research</a>
+          <ul class="submenu">
+            <li><a href="#quantum">Quantum Computing</a></li>
+            <li><a href="#complex">Complex Systems</a></li>
+			<li><a href="#publications">Publications</a></li>
+			<li><a href="#talks">Talks</a></li>
+            <li><a href="#initiative">Research Group Initiative</a></li>
+          </ul>
         </li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="teaching.html">Teaching</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="photo">
-        <img src="images/profile1.jpg" alt="Bs. Sebastian Rodriguez" class="align-left">
+		<li>
+          <a href="#contact">Contact</a>
+          <ul class="submenu">
+            <li><a href="mailto:sebastian.rodriguez@pucp.edu.pe"><i class="fas fa-envelope"></i>	Email</a></li>
+            <li><a href="https://www.linkedin.com/in/srodfal/" target="_blank"><i class="fab fa-linkedin"></i>	LinkedIn</a></li>
+            <li><a href="https://github.com/sebrodfal" target="_blank"><i class="fab fa-github"></i>	GitHub</a></li>
+            <li><a href="https://twitter.com/seb_rodfal" target="_blank"><i class="fab fa-twitter"></i>	Twitter</a></li>
+            <li><a href="https://community.wolfram.com/web/srodriguez" target="_blank"><i class="fas fa-atom"></i>	Wolfram Community</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="docs/Sebastian_Rodriguez_CV.pdf" download target="_blank">CV</a>
+        </li>		
+      </ul>
+    </nav>
+  </header>
+
+<section id="bubble-slider">
+  <div class="bubble-container">
+    <div class="bubble"><img src="images/profile-image.jpg" /></div>
+    <div class="bubble"><img src="images/profile2.png"  /></div>
+    <div class="bubble"><img src="images/profile4.png"  /></div>
+  </div>
+</section>
+
+
+
+  <main class="grid-container">
+    <section id="research" class="grid-item">
+      <h2> About me</h2>
+      <p>Bachelor of Science in Physics from Pontificia Universidad Católica del Perú (PUCP).</p> 
+	  <p>My current work on complex systems builds on my research with the Complex Systems and Non-Linear Dynamics Group (GSC-PUCP), where I focus on social and ecological systems. As part of my broader interest in computational social science, I have also shared this knowledge through open classes on using NetLogo for research in this area.</p> 
+      <p>At Wolfram Research, I work as a researcher and developer in Quantum Computing, focusing on variational algorithms and their application to optimization problems.</p>
+	  <p> I am currently part of the Open Quantum Institute team for Smart Grid Management, an initiative hosted by <a href="https://open-quantum-institute.cern/project/smart-grid-management/" target="_blank">CERN</a>.
+		<div style="text-align:center; margin-top:20px; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+		  <a href="docs/Sebastian_Rodriguez_CV.pdf" download style="padding:10px 20px; background-color:#007acc; color:#fff; border-radius:8px; text-decoration:none; font-weight:bold; transition: background-color 0.3s;">
+			📄 Download CV
+		  </a>
+		  <a href="https://www.linkedin.com/in/srodfal/" target="_blank" style="padding:10px 20px; background-color:#007acc; color:#fff; border-radius:8px; text-decoration:none; font-weight:bold; transition: background-color 0.3s;">
+			<i class="fab fa-linkedin" style="margin-right: 8px;"></i>LinkedIn
+		  </a>
+		  <a href="https://github.com/sebrodfal" target="_blank" style="padding:10px 20px; background-color:#007acc; color:#fff; border-radius:8px; text-decoration:none; font-weight:bold; transition: background-color 0.3s;">
+			<i class="fab fa-github" style="margin-right: 8px;"></i>GitHub
+		  </a>
+		</div>
     </section>
-    <section id="research">
-        <h2>Research</h2>
-        <p> 
-		Bachelor of Science with a major in Physics from the Pontifical Catholic University of Peru. </p> 
-		<p> My academic journey includes active participation in the Quantum Optics Group (GROC-PUCP), where I acquired knowledge in tomography and interferometry techniques for the characterization of quantum states. Currently, I continue my research with the Complex Systems and Non-Linear Dynamics Group (GSC-PUCP), focusing on social and ecological complex systems. I have shared my knowledge through open classes on the use of NetLogo for research in this area.  </p> 
-		<p>At Wolfram Research, I work as a researcher and programmer, specializing in Quantum Computing. My work focuses on the implementation of quantum algorithms and the development of their practical applications in the field of Optimization. My projects and contributions are available on the <a href="https://community.wolfram.com/web/srodriguez">Wolfram Community web</a>.</p>
-        <p>In the following links you can find my work in the mentioned areas:</p>	
-		<ul>
-            <li><a href="QuantumComputing_index.html"><strong>Quantum Computing</strong></a></li>
-            <li><a href="ComplexSystems_index"><strong>Complex Systems</strong></a></li>
-        </ul>
+
+    <section id="publications" class="grid-item">
+      <h2>📄 Publications</h2>
+	  <strong>Explore My Computational Essays and Research Papers!</strong>
+      <h3>2025</h3>
+      <ul>
+        <li><a href="https://community.wolfram.com/groups/-/m/t/3462606" target="_blank">Symbolic methods in quantum optimization: introduction to QAOA-in-QAOA</a></li>
+        <li><a href="https://community.wolfram.com/groups/-/m/t/3449705" target="_blank">Exploring the quantum approximate optimization algorithm (QAOA) through
+the Max-Cut problem</a></li>
+		        <li><a href="https://community.wolfram.com/groups/-/m/t/3391864" target="_blank">Billiard dynamics: from regularity to chaos</a></li>
+      </ul>
+      <h3>2024</h3>
+      <ul>
+        <li><a href="https://arxiv.org/abs/2411.01082" target="_blank">Quantum Potato Chips | arXiv</a></li>
+		<li><a href="https://community.wolfram.com/groups/-/m/t/3253903" target="_blank">Multiplexer-based variational quantum linear solver</a></li>
+        <li><a href="https://community.wolfram.com/groups/-/m/t/3185554" target="_blank">Quantum locking mechanism using quantum phase estimation and phase kickback for ASCII passwords</a></li>
+		<li><a href="https://community.wolfram.com/groups/-/m/t/3180154" target="_blank">Variational quantum linear solver</a></li>
+        <li><a href="https://community.wolfram.com/groups/-/m/t/3180154" target="_blank">Natural gradient descent optimization for quantum circuits with Fubini–Study
+		<li><a href="https://community.wolfram.com/groups/-/m/t/3132207" target="_blank">Parameter Shift-Rule to Differentiate Qubit Gates: Stochastic and Approximate Stochastic Algorithms
+metric tensor</a></li>
+      </ul>
+
+      </ul>
     </section>
-    <section id="publications">
-        <h2>Latest Publications</h2>
-		<ul>
-			<li><a href="https://doi.org/10.48550/arXiv.2411.01082">01/11/2024: Quantum Potato Chips | Wolfram Research (ArXiv preprint)</a></li>
-			<li><a href="https://community.wolfram.com/groups/-/m/t/3253903">05/29/2024: Multiplexer-based variational quantum linear solver | Wolfram Community</a></li>
-			<li><a href="https://community.wolfram.com/groups/-/m/t/3185554">05/29/2024: Quantum locking mechanism using quantum phase estimation and phase kickback for ASCII passwords | Wolfram Community</a></li>
-            <li><a href="https://community.wolfram.com/groups/-/m/t/3180154">05/22/2024: Variational quantum linear solver | Wolfram Community</a></li>
-			<li><a href="https://community.wolfram.com/groups/-/m/t/3131997?p_p_auth=tFHA0v2l">02/28/2024: Natural gradient descent optimization for quantum circuits with Fubiny–Study metric tensor | Wolfram Community</a></li>
-			<li><a href="https://community.wolfram.com/groups/-/m/t/3132207?p_p_auth=tFHA0v2l">02/28/2024: Parameter Shift-Rule to Differentiate Qubit Gates: Stochastic and Approximate Stochastic Algorithms | Wolfram Community</a></li>            
-        </ul>
+
+    <section id="talks" class="grid-item">
+      <h2>🎤 Conferences & Talks</h2>
+<ul>
+        <li>
+          <a href="https://youtu.be/yVrt9tSbVU8?si=qPceGDf0r4ZiAKAd" target="_blank">Wolfram Tech Talk 2024</a>
+          <br />
+           Talk on "Variational Quantum Algorithms and Hybrid Optimization Methods"
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7285247266158776320" target="_blank">IBM Qiskit Hands-On Workshop</a>
+          <br />
+          - Talk on "Quantum Natural Gradient Descent for Optimization".<br />
+          - Organized by Zeta Science Forum.<br />
+          - Collaboration with IBM Qiskit and School of Mathematics and Computer Science, IBA Karachi.
+        </li>
+        <li>
+          <a href="https://youtu.be/_cQ0oGytgCY?si=yhh2KOQ5FTHf8Rgn" target="_blank">PUCP Colloquium</a>
+          <br />
+          Talk on "Quantum Natural Gradient Descent in Variational Quantum Circuits"
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7330742081457459200/" target="_blank">Knowledge Share – Open Quantum Institute (CERN)</a>
+          <br />
+          - Talk on "Demystifying QAOA: Symbolic Methods in Quantum Optimization".<br />
+          - Presented work on QAOA and the QAOA-in-QAOA approach for solving Max-Cut and other combinatorial optimization problems.
+        </li>
+      </ul>
     </section>
-    <section id="teaching">
-        <h2>Open Courses</h2>
-            <li><a href="https://www.youtube.com/playlist?list=PLWuYmj-eBmixLIhe1E_6i1dsSEW31_ms4">Complexity PUCP - Introducción a NetLogo y Sistemas complejos</a></li>
-			<li><a href="https://www.youtube.com/playlist?list=PLWuYmj-eBmiyaXxwXHBYA9adMVESmVIA8">Escuela de Verano - ASDF PUCP - Introducción a sistemas complejos físicos y socieconomicos con modelos basados en agentes</a></li>
-        </ul>
+
+    <section id="complex" class="grid-item">
+      <h2>🧠 Complex Systems</h2>
+      <p>Research Assistant at PUCP’s <a href="https://departamento-ciencias.pucp.edu.pe/grupos-de-investigacion/grupo-de-sistemas-complejos-y-dinamica-no-lineal-gsc" target="_blank">Complex Systems and Non-Linear Dynamics Group.</a></p>
+      <ul>
+		<li><a>Quantifying Emergent Behaviors in ABM and CA models Using Conditional Entropy (Current Research)</a>
+		<br />
+		- Developed agent-based models of biased random walks showing macro-agent emergence.<br />
+		- Proposed a novel methodology to quantitatively identify emergent patterns.<br />
+		- Under the guidance of <a href="https://scholar.google.com/citations?user=s1dmeuUAAAAJ&hl=es" target="_blank">Dr. Luciano Stucchi</a>.
+		</li>
+		<li><a href="https://sebrodfal.github.io/teaching.html">Introduction to Complexity and Agent-Based Modeling</a>.
+		<br />
+		Delivered a free, full-length introductory courses in Spanish on modeling complex systems using NetLogo, aimed at Peruvian undergraduate students.<br />
+		</li>
+		<li><a href="https://sebrodfal.github.io/ComplexSystems_index.html">Paper review: Modelos de Influencia Social</a>.
+		<br />
+		Paper review on "Stochastic events can explain sustained clustering and polarisation of opinions in social networks" by Scott A. Condie & Corrine M. Condie.<br />
+		</li>
+		<li>
+		<a href="https://www.linkedin.com/feed/update/urn:li:activity:6815419112580292608/" target="_blank">200 Embajadoras del Bicentenario - Embassy of the United States in Peru & Concytec</a>
+		<br />
+		Selected as a STEM specialist to deliver science and technology workshops about agent-based computational models to 200 girls aged 6–12 from all 25 regions of Peru, primarily from under-resourced backgrounds. <br />
+		</li>
+	  </ul>
     </section>
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: sebastian.rodriguez@pucp.edu.pe | sebastian.rodriguez.falcon@gmail.com</p>
-        <p><a href=" https://www.linkedin.com/in/srodfal/" class="blue-link">LinkedIn</a></p>
-		<p><a href="https://twitter.com/seb_rodfal" class="blue-link">Twitter</a>
-        <p><a href="https://community.wolfram.com/web/srodriguez" class="blue-link">Wolfram Community</a>
-    </section>
+
+	<section id="quantum" class="grid-item">
+	  <h2>⚛️ Quantum Computing</h2>
+	  <p>My projects and contributions are available on the <a href="https://community.wolfram.com/web/srodriguez" target="_blank">Wolfram Community website</a>.</p>
+	  <p>Original educational resources I developed to support learning and research in quantum optimization:
+	  <ul>
+		<li>
+		  <strong><a href="https://www.wolframcloud.com/obj/937093ba-9519-45f8-b520-34f72ea202c7" target="_blank">Introduction to Quantum Optimization – Computational Book</a></strong><br />
+		  - A full introduction to quantum optimization using the Wolfram Quantum Framework.<br />
+		  - Covers: Variational Quantum Eigensolver, Quantum Approximate Optimization Algorithm, Quantum Natural Gradient Descent, and Variational Quantum Linear Solver.
+		</li><br />
+		<li>
+		  <strong><a href="https://www.wolfram.com/wolfram-u/courses/mathematics/wsg63-quantum-optimization/" target="_blank">Wolfram U Course: Daily Study Group on Quantum Optimization</a></strong><br />
+		  Five-day study group introducing both foundational and advanced variational algorithms for quantum optimization.
+		</li><br />
+		<li>
+		  <strong><a href="https://resources.wolframcloud.com/PacletRepository/resources/Wolfram/QuantumFramework/tutorial/QuantumOptimization.html" target="_blank">Quantum Optimization Tech Note</a></strong><br />
+		  Official documentation on quantum optimization methods using the Wolfram Quantum Framework.
+		</li>
+	  </ul>
+	</section>
+	  
+
+	<section id="initiative" class="grid-item">
+	  <h2>🌱 Research Group Initiative</h2>
+	  <p>I launched an initiative to establish a formal research group in complex systems in Peru. The effort has received early support from:</p>
+	  <ul>
+		<li>Pontifical Catholic University of Peru (PUCP)</li>
+		<li>Universidad del Pacífico</li>
+		<li>Wolfram Research</li>
+	  </ul>
+	  <p>The goal is to promote research on ecological, social, and computational complexity. Activities will include collaborative projects, seminars, and public outreach to strengthen the regional research ecosystem.</p>
+	  <p>Once I complete formal training in Complex Systems, I plan to return and fully consolidate this initiative as a transdisciplinary research hub.</p>
+
+	  <div style="margin-top: 20px;">
+		<p><strong>Photos and Documents:</strong></p>
+		<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+		  <img src="images/complexity/2.jpg" alt="Initiative Photo 1" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); flex: 1 1 45%; min-width: 250px;">
+		  <img src="images/complexity/1.jpg" alt="Initiative Photo 2" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); flex: 1 1 45%; min-width: 250px;">
+		</div>
+
+		<div style="text-align: center; margin-top: 25px;">
+		  <a href="https://docs.google.com/presentation/d/1l9RjwGx1pJBuEQDEm4yIYMwWXiM9M4FjRTYqmwZn6ZI/edit?usp=sharing" target="_blank"  style="padding:12px 24px; background-color:#007acc; color:#fff; border-radius:10px; text-decoration:none; font-weight:bold; display: inline-block; transition: background-color 0.3s;">
+			📘 2024 Report
+		  </a>
+		</div>
+	  </div>
+	</section>
+  </main>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: sebastian.rodriguez@pucp.edu.pe | sebastian.rodriguez.falcon@gmail.com</p>
+    <p><a href="https://www.linkedin.com/in/srodfal/" class="blue-link">LinkedIn</a></p>
+    <p><a href="https://twitter.com/seb_rodfal" class="blue-link">Twitter</a></p>
+    <p><a href="https://community.wolfram.com/web/srodriguez" class="blue-link">Wolfram Community</a></p>
+  </section>
+  <script>
+    // Sync initial mode
+    document.body.classList.remove("dark-mode", "light-mode");
+    const prefersLight = true;
+    document.body.classList.add(prefersLight ? "light-mode" : "dark-mode");
+  </script>
+  
+	<script>
+	  let currentIndex = 0;
+
+	  function moveSlide(direction) {
+		const slider = document.querySelector('.slider');
+		const slides = document.querySelectorAll('.slide');
+		currentIndex = (currentIndex + direction + slides.length) % slides.length;
+		slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+	  }
+
+	  setInterval(() => moveSlide(1), 5000); // Auto-slide every 5 seconds
+	</script>
+
 </body>
 </html>

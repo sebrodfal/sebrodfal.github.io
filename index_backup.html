@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device- initial-scale=1.0">
+    <title>Sebastian Rodriguez Research Webpage</title>
+    <style>
+ body {
+            font-family: Arial, sans-serif;
+            background-color: #222222;
+            color: #dddddd;
+        }
+        header {
+            background-color: #333333;
+            padding: 20px;
+        }
+        h1 {
+            margin: 0;
+        }
+        p {
+            margin: 0;
+            padding: 10px 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+        nav li {
+            margin: 0 10px;
+        }
+        nav a {
+            color: #dddddd;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #bbbbbb;
+        }
+        section {
+            padding: 20px;
+        }
+        section h2 {
+            margin: 0;
+            padding: 10px 0;
+            border-bottom: 1px solid #444444;
+        }
+        section ul {
+            list-style: none;
+            padding: 0;
+        }
+        section li {
+            margin: 10px 0;
+        }
+        section a {
+            color: #bbbbbb;
+            text-decoration: none;
+        }
+        section a:hover {
+            color: #dddddd;
+        }
+        #photo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+        }
+        #photo img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #222222;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.submenu li {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: #000;
+}
+
+.submenu li:hover {
+    background-color: #444444;
+}
+
+li:hover .submenu {
+    display: block;
+}
+		
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bs. Sebastian Rodriguez</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            <li>
+            <a href="#research">Research</a>
+            <ul class="submenu">
+            <li><a href="QuantumComputing_index.html">Quantum Computing</a></li>
+            <li><a href="ComplexSystems_index">Complex Systems</a></li>
+            </ul>
+        </li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="photo">
+        <img src="images/profile1.jpg" alt="Bs. Sebastian Rodriguez" class="align-left">
+    </section>
+    <section id="research">
+        <h2>Research</h2>
+        <p> 
+		Bachelor of Science with a major in Physics from the Pontifical Catholic University of Peru. </p> 
+		<p> My academic journey includes active participation in the Quantum Optics Group (GROC-PUCP), where I acquired knowledge in tomography and interferometry techniques for the characterization of quantum states. Currently, I continue my research with the Complex Systems and Non-Linear Dynamics Group (GSC-PUCP), focusing on social and ecological complex systems. I have shared my knowledge through open classes on the use of NetLogo for research in this area.  </p> 
+		<p>At Wolfram Research, I work as a researcher and programmer, specializing in Quantum Computing. My work focuses on the implementation of quantum algorithms and the development of their practical applications in the field of Optimization. My projects and contributions are available on the <a href="https://community.wolfram.com/web/srodriguez">Wolfram Community web</a>.</p>
+        <p>In the following links you can find my work in the mentioned areas:</p>	
+		<ul>
+            <li><a href="QuantumComputing_index.html"><strong>Quantum Computing</strong></a></li>
+            <li><a href="ComplexSystems_index"><strong>Complex Systems</strong></a></li>
+        </ul>
+    </section>
+    <section id="publications">
+        <h2>Latest Publications</h2>
+		<ul>
+			<li><a href="https://doi.org/10.48550/arXiv.2411.01082">01/11/2024: Quantum Potato Chips | Wolfram Research (ArXiv preprint)</a></li>
+			<li><a href="https://community.wolfram.com/groups/-/m/t/3253903">05/29/2024: Multiplexer-based variational quantum linear solver | Wolfram Community</a></li>
+			<li><a href="https://community.wolfram.com/groups/-/m/t/3185554">05/29/2024: Quantum locking mechanism using quantum phase estimation and phase kickback for ASCII passwords | Wolfram Community</a></li>
+            <li><a href="https://community.wolfram.com/groups/-/m/t/3180154">05/22/2024: Variational quantum linear solver | Wolfram Community</a></li>
+			<li><a href="https://community.wolfram.com/groups/-/m/t/3131997?p_p_auth=tFHA0v2l">02/28/2024: Natural gradient descent optimization for quantum circuits with Fubiny–Study metric tensor | Wolfram Community</a></li>
+			<li><a href="https://community.wolfram.com/groups/-/m/t/3132207?p_p_auth=tFHA0v2l">02/28/2024: Parameter Shift-Rule to Differentiate Qubit Gates: Stochastic and Approximate Stochastic Algorithms | Wolfram Community</a></li>            
+        </ul>
+    </section>
+    <section id="teaching">
+        <h2>Open Courses</h2>
+            <li><a href="https://www.youtube.com/playlist?list=PLWuYmj-eBmixLIhe1E_6i1dsSEW31_ms4">Complexity PUCP - Introducción a NetLogo y Sistemas complejos</a></li>
+			<li><a href="https://www.youtube.com/playlist?list=PLWuYmj-eBmiyaXxwXHBYA9adMVESmVIA8">Escuela de Verano - ASDF PUCP - Introducción a sistemas complejos físicos y socieconomicos con modelos basados en agentes</a></li>
+        </ul>
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: sebastian.rodriguez@pucp.edu.pe | sebastian.rodriguez.falcon@gmail.com</p>
+        <p><a href=" https://www.linkedin.com/in/srodfal/" class="blue-link">LinkedIn</a></p>
+		<p><a href="https://twitter.com/seb_rodfal" class="blue-link">Twitter</a>
+        <p><a href="https://community.wolfram.com/web/srodriguez" class="blue-link">Wolfram Community</a>
+    </section>
+</body>
+</html>
