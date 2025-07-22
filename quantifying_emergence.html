@@ -88,8 +88,30 @@
       background-color: rgba(255,255,255,0.2);
     }
 
+    .toggle-mode.mode-aware {
+      border: none;
+      font-weight: bold;
+    }
+
+    body.light-mode .toggle-mode.mode-aware {
+      background-color: #1a1a1a;
+      color: white;
+    }
+
+    body.dark-mode .toggle-mode.mode-aware {
+      background-color: white;
+      color: black;
+    }
+
     main {
       padding: 30px;
+    }
+
+    h2 {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 1.8em;
     }
 
     .grid-container {
@@ -134,6 +156,23 @@
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     }
 
+    .download-btn {
+      margin-top: 10px;
+      display: block;
+      text-align: center;
+      background-color: #007acc;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .download-btn:hover {
+      background-color: #005999;
+    }
+
     footer {
       padding: 20px;
       text-align: center;
@@ -150,41 +189,69 @@
 </head>
 <body class="light-mode">
   <header>
-    <h1>Research Animations</h1>
+    <h1>Quantifying Emergent Behaviors in ABM and CA models using Conditional Entropy</h1>
     <nav>
       <ul>
         <li><a href="index.html">← Back to Home</a></li>
       </ul>
     </nav>
-    <button class="toggle-mode" onclick="document.body.classList.toggle('dark-mode')">Toggle Light/Dark</button>
+    <button class="toggle-mode" id="modeToggle">Toggle Light/Dark</button>
   </header>
 
   <main>
-    <div class="grid-container">
+    <!-- Sección 1 -->
+    <h2>Quantifying Emergence</h2>
+    <div style="text-align: center; margin-bottom: 20px;">
+      <button id="toggle-new-section-btn" onclick="toggleSection('new-section', 'toggle-new-section-btn')" class="toggle-mode mode-aware">Hide/Show</button>
+    </div>
+
+    <div id="new-section" class="grid-container" style="display: grid;">
+      <section class="grid-item">
+        <h2>Mean Information Gain</h2>
+        <img src="images/equation.png" alt="eq" />
+        <p>We introduce conditional entropy as a measure of complexity—specifically, its mean value, commonly known as the mean information gain 𝐺. To clarify how this metric can be calculated step by step from cellular automata, I created a practical guide based on an example presented in <a href="https://www.cs.kent.ac.uk/events/2015/AISB2015/proceedings/computationalCreativity/AISB-CC2015.pdf" >this paper</a>:
+		</p>
+        <a href="downloads/mean_information_gain.pdf" class="download-btn" download>
+          <i class="fa fa-download"></i> Download PDF
+        </a>
+		<img src="images/gcalc.png" alt="calc" />
+      </section>
+      <section class="grid-item">
+        <h2>Examples</h2>
+        <img src="images/meang.png" alt="meang" />
+        <p>Patterns with less structure tend to exhibit higher values of 𝐺, reflecting greater spatial disorder.</p>
+      </section>
+    </div>
+
+    <!-- Sección 2 -->
+    <h2>Emergent Behavior</h2>
+    <div style="text-align: center; margin-bottom: 20px;">
+      <button id="toggle-main-section-btn" onclick="toggleSection('main-section', 'toggle-main-section-btn')" class="toggle-mode mode-aware">Hide/Show</button>
+    </div>
+
+    <div id="main-section" class="grid-container" style="display: grid;">
       <section class="grid-item">
         <h2>Convergent Behavior</h2>
         <img src="animations/convergente_gif.gif" alt="convergent" />
-        <p>Recursive QAOA approach for structured optimization.</p>
+        <p>The convergent system initially oscillates in one direction until it converges in the border.</p>
       </section>
-
       <section class="grid-item">
         <h2>Periodic Behavior</h2>
-        <img src="animations/periodico_gif.gif" alt="ABM Dynamics" />
-        <p>The periodic system quickly converges into oscillating clusters, in some cases they all converge to only one.</p>
+        <img src="animations/periodico_gif.gif" alt="periodic" />
+        <p>The periodic system quickly converges into oscillating clusters.</p>
       </section>
-
       <section class="grid-item">
         <h2>Complex Behavior</h2>
-        <img src="animations/fubini-study.gif" alt="Fubini-Study Metric" />
-        <p>Curvature on quantum state manifolds.</p>
+        <img src="animations/complex_gif.gif" alt="complex" />
+        <img src="animations/complex_gif_2.gif" alt="complex2" />
+        <p>The complex system presents a close-to-chaotic behavior but agents tend to move together.</p>
       </section>
-
       <section class="grid-item">
         <h2>Chaotic Behavior</h2>
-        <img src="animations/portfolio.gif" alt="Portfolio Optimization" />
-        <p>Solving portfolio problems with QAOA strategies.</p>
+        <img src="animations/chaotic_gif.gif" alt="chaotic" />
+        <img src="animations/chaotic_gif_2.gif" alt="chaotic2" />
+        <p>The chaotic system does not present any recognizable pattern.</p>
       </section>
-
     </div>
   </main>
 
@@ -193,9 +260,40 @@
   </footer>
 
   <script>
-    document.body.classList.remove("dark-mode", "light-mode");
-    const prefersLight = true;
-    document.body.classList.add(prefersLight ? "light-mode" : "dark-mode");
+    function toggleSection(sectionId, buttonId) {
+      const section = document.getElementById(sectionId);
+      const button = document.getElementById(buttonId);
+      const isHidden = section.style.display === "none" || section.style.display === "";
+      section.style.display = isHidden ? "grid" : "none";
+      button.textContent = isHidden ? "Hide" : "Show";
+    }
+
+    function updateAllToggleButtonStyles() {
+      const buttons = document.querySelectorAll('.mode-aware');
+      buttons.forEach(btn => {
+        if (document.body.classList.contains("dark-mode")) {
+          btn.style.backgroundColor = "white";
+          btn.style.color = "black";
+        } else {
+          btn.style.backgroundColor = "#1a1a1a";
+          btn.style.color = "white";
+        }
+      });
+    }
+
+    document.getElementById("modeToggle").addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      document.body.classList.toggle("light-mode");
+      updateAllToggleButtonStyles();
+    });
+
+    function applyInitialMode() {
+      document.body.classList.remove("dark-mode", "light-mode");
+      document.body.classList.add("light-mode");
+      updateAllToggleButtonStyles();
+    }
+
+    applyInitialMode();
   </script>
 </body>
 </html>
