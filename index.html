@@ -310,7 +310,23 @@
 	  display: block;
 	}
 
-	
+		.side-by-side-images {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap; /* Se acomoda en móviles */
+}
+
+.side-by-side-images img {
+  width: 47%; /* Ajusta según el tamaño deseado */
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.side-by-side-images img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
 	
   </style>
 </head>
@@ -441,7 +457,16 @@ metric tensor</a></li>
 		<br />
 		- Developed agent-based models of biased random walks showing macro-agent emergence.<br />
 		- Proposed a novel methodology to quantitatively identify emergent patterns.<br />
-		- Under the guidance of <a href="https://scholar.google.com/citations?user=s1dmeuUAAAAJ&hl=es" target="_blank">Dr. Luciano Stucchi</a>.
+		- Under the guidance of <a href="https://scholar.google.com/citations?user=s1dmeuUAAAAJ&hl=es" target="_blank">Dr. Luciano Stucchi</a>.<br />
+		<br />
+		<b> Poster presentation at 4th Latin American Conference on Complex Networks - LANET 2025 </b>
+		
+		<div class="side-by-side-images">
+		<img src="images/LANET2.jpg" alt="poster event 2" />
+		<img src="images/LANET1.jpg" alt="poster event 1" />
+		</div>
+		<br />
+	
 		</li>
 		<li><a href="https://sebrodfal.github.io/teaching.html">Introduction to Complexity and Agent-Based Modeling</a>.
 		<br />

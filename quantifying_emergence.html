@@ -185,6 +185,26 @@
         grid-template-columns: 1fr;
       }
     }
+	
+	.side-by-side-images {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap; /* Se acomoda en móviles */
+}
+
+.side-by-side-images img {
+  width: 48%; /* Ajusta según el tamaño deseado */
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.side-by-side-images img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+	
+	
   </style>
 </head>
 <body class="light-mode">
@@ -200,6 +220,35 @@
 
   <main>
     <!-- Sección 1 -->
+	
+	<h2>Poster Presentation</h2>
+<div style="text-align: center; margin-bottom: 20px;">
+  <button id="toggle-poster-section-btn" onclick="toggleSection('poster-section', 'toggle-poster-section-btn')" class="toggle-mode mode-aware">Hide/Show</button>
+</div>
+
+<div id="poster-section" class="grid-container" style="display: grid;">
+  <section class="grid-item">
+    <h2>LANET 2025 - 4th Latin American Conference on Complex Networks</h2>
+	<div class="side-by-side-images">
+		<img src="images/LANET2.jpg" alt="poster event 2" />
+		<img src="images/LANET1.jpg" alt="poster event 1" />
+	</div>
+	<img src="images/LANET3.jpeg" alt="poster event 3" />
+	<p>
+      This poster was presented at the <strong>4th Latin American Conference on Complex Networks - LANET 2025</strong> (28 July - 1 August 2025, Punta del Este, Uruguay) at Centro Universitario Regional Este, Universidad de la República.
+      It summarizes a method to quantify visual emergent behaviors in agent-based and cellular automata systems using Mean Information Gain.
+    </p>
+    <a href="docs/Quantifying_Emergence_POSTER.pdf" class="download-btn" download>
+      <i class="fa fa-download"></i> Download Poster PDF
+    </a>
+  </section>
+
+  <section class="grid-item">
+    <h2>Poster Preview</h2>
+    <img src="images/Quantifying_Emergence_POSTER.jpg" alt="poster thumbnail" />
+  </section>
+</div>
+	
     <h2>Quantifying Emergence</h2>
     <div style="text-align: center; margin-bottom: 20px;">
       <button id="toggle-new-section-btn" onclick="toggleSection('new-section', 'toggle-new-section-btn')" class="toggle-mode mode-aware">Hide/Show</button>
