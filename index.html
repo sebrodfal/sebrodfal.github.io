@@ -281,55 +281,29 @@
 
 
 
-    .bubble-container {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        padding: 20px;
-        max-width: 1200px;     
-        margin: 0 auto;
-        flex-wrap: nowrap;     
-        overflow-x: auto;      
-        -webkit-overflow-scrolling: touch;
-    }
+.bubble-container {
+	  display: flex;
+	  justify-content: center;
+	  flex-wrap: wrap;
+	  gap: 30px;
+	  padding: 20px;
+	  max-width: 1000px;
+	  margin: 0 auto;
+	}
 
+	.bubble {
+	  width: 200px;
+	  height: 200px;
+	  border-radius: 10%;
+	  overflow: hidden;
+	  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+	  transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
 
-    .bubble {
-        flex: 0 0 min(220px, calc((100% - 4 * 30px) / 5));
-        height: auto;
-        border-radius: 10%;
-        overflow: hidden;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-
-
-    .bubble:hover {
-        transform: scale(1.12);
-        box-shadow: 0 12px 24px rgba(0,0,0,0.25);
-    }
-
-
-    @media (max-width: 700px) {
-        .bubble-container {
-            flex-wrap: wrap;
-            gap: 18px;
-            padding: 14px;
-    }
-        .bubble {
-                flex: 1 1 45%;
-                min-width: 140px;
-        }
-    }
-
-
-    @media (max-width: 420px) {
-        .bubble {
-                flex: 1 1 100%;
-                min-width: 0;
-        }
-    }
+	.bubble:hover {
+	  transform: scale(1.6);
+	  box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+	}
 
 	.bubble img {
 	  width: 100%;
@@ -337,6 +311,7 @@
 	  object-fit: cover;
 	  display: block;
 	}
+
 
 		.side-by-side-images {
   display: flex;
@@ -396,11 +371,10 @@
 
 <section id="bubble-slider">
   <div class="bubble-container">
-    <div class="bubble"><img src="images/ibm_brazil/2025-11-14 - Quantum and Sustainability Workshop-70.jpg"  /></div>
-    <div class="bubble"><img src="images/Uruguay/IMG_3924.JPG"  /></div>
-    <div class="bubble"><img src="images/profile-image.jpg" /></div>
-    <div class="bubble"><img src="images/profile2.png"  /></div>
-    <div class="bubble"><img src="images/Uruguay/IMG_7030.JPG"  /></div>
+    <div class="bubble"><img src="images/selected/2025-11-14 - Quantum and Sustainability Workshop-70.jpg"  /></div>
+    <div class="bubble"><img src="images/selected/IMG_3924.JPG"  /></div>
+    <div class="bubble"><img src="images/selected/profile-image.jpg" /></div>
+    <div class="bubble"><img src="images/selected/IMG_7030.JPG"  /></div>
   </div>
 </section>
 
