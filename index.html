@@ -279,29 +279,57 @@
 	  text-align: center;
 	}
 
-	.bubble-container {
-	  display: flex;
-	  justify-content: center;
-	  flex-wrap: wrap;
-	  gap: 30px;
-	  padding: 20px;
-	  max-width: 1000px;
-	  margin: 0 auto;
-	}
 
-	.bubble {
-	  width: 200px;
-	  height: 200px;
-	  border-radius: 10%;
-	  overflow: hidden;
-	  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-	  transition: transform 0.3s ease, box-shadow 0.3s ease;
-	}
 
-	.bubble:hover {
-	  transform: scale(1.6);
-	  box-shadow: 0 12px 24px rgba(0,0,0,0.25);
-	}
+    .bubble-container {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        padding: 20px;
+        max-width: 1200px;     
+        margin: 0 auto;
+        flex-wrap: nowrap;     
+        overflow-x: auto;      
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+    .bubble {
+        flex: 0 0 min(220px, calc((100% - 4 * 30px) / 5));
+        height: auto;
+        border-radius: 10%;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+
+
+    .bubble:hover {
+        transform: scale(1.12);
+        box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+    }
+
+
+    @media (max-width: 700px) {
+        .bubble-container {
+            flex-wrap: wrap;
+            gap: 18px;
+            padding: 14px;
+    }
+        .bubble {
+                flex: 1 1 45%;
+                min-width: 140px;
+        }
+    }
+
+
+    @media (max-width: 420px) {
+        .bubble {
+                flex: 1 1 100%;
+                min-width: 0;
+        }
+    }
 
 	.bubble img {
 	  width: 100%;
@@ -368,9 +396,11 @@
 
 <section id="bubble-slider">
   <div class="bubble-container">
+    <div class="bubble"><img src="images/ibm_brazil/2025-11-14 - Quantum and Sustainability Workshop-70.jpg"  /></div>
+    <div class="bubble"><img src="images/Uruguay/IMG_3924.JPG"  /></div>
     <div class="bubble"><img src="images/profile-image.jpg" /></div>
     <div class="bubble"><img src="images/profile2.png"  /></div>
-    <div class="bubble"><img src="images/profile4.png"  /></div>
+    <div class="bubble"><img src="images/Uruguay/IMG_7030.JPG"  /></div>
   </div>
 </section>
 
@@ -434,6 +464,12 @@ metric tensor</a></li>
           <br />
            Mentored the team ’Q-Quest Distribution’ in developing a quantum optimization model for efficient water distribution during disaster scenarios in Colombia.
         </li>
+        <li>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7369820261744910341/" target="_blank">Conferencia Latinoamericana de Innovación, Tecnología y Negocios (Innovatech 2025)</a>
+          <br />
+           -Talk on "A Biased Random Walk Model of Collective Imitation"
+           -Organized by Universidad del Pacífico (PE) and IEEE.
+        </li>
 		<li>
           <a href="https://youtu.be/yVrt9tSbVU8?si=qPceGDf0r4ZiAKAd" target="_blank">Wolfram Tech Talk 2024</a>
           <br />
@@ -455,7 +491,6 @@ metric tensor</a></li>
           <a href="https://www.linkedin.com/feed/update/urn:li:activity:7330742081457459200/" target="_blank">Knowledge Share – Open Quantum Institute (CERN)</a>
           <br />
           - Talk on "Demystifying QAOA: Symbolic Methods in Quantum Optimization".<br />
-          - Presented work on QAOA and the QAOA-in-QAOA approach for solving Max-Cut and other combinatorial optimization problems.
         </li>
       </ul>
     </section>
